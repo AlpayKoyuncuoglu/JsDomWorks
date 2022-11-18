@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="card-header">
+        <h3 class="h1 cart-title" id="title">todo app</h3>
+    </div>
+
+    <ul id="task-list">
+        <li>
+            görev 1
+        </li>
+        <li>
+            görev 2
+        </li>
+        <li>
+            görev 3
+        </li>
+    </ul>
+
+    <script>
+        let sonuc;
+        sonuc=document.getElementById("title").innerText; 
+        sonuc=document.getElementById("title").id; 
+        sonuc=document.getElementsByClassName("title"); 
+        sonuc=document.getElementById("title").className; 
+        sonuc=document.getElementById("title").classList; 
+        document.getElementById("title").style.fontSize="40px";
+        document.getElementById("title").style.color="pink";
+        document.getElementById("title").innerText="pink";
+        document.getElementById("title").innerHTML="asdaspink";
+
+        sonuc=document.querySelector("#title").innerHTML;
+        sonuc=document.querySelector(".card-header").innerHTML;
+        sonuc=document.querySelector("li:nth-child(1)").innerHTML;
+        console.log(sonuc);
+
+
+    </script>
+
+</body>
+
+</html>
