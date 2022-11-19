@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        todo app 2
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" id="txtTaskName" class="form-control">
+                            <button type="submit" class="btn btn-primary" id="btnAddNewTask">Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    <button id="btnClear" class="btn btn-danger btn-sm float-end">Temizle</button>
+                </div>
+                <ul id="task-list" class="list-group list-group-flus"></ul>
+            </div>
+
+            <div class="card mt-3">
+                <ul id="task-list" class="list-group list-group-flush">
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        let sonuc;
+
+        let taskList = [
+            { "id": 1, "taskName": "task 1" },
+            { "id": 2, "taskName": "task 2" },
+            { "id": 3, "taskName": "task 3" },
+            { "id": 4, "taskName": "task 4" },
+        ]
+        ul = document.getElementById("task-list");
+
+        for (let task of taskList) {
+            let li = `
+     <li class="task list-group-item">
+            <div class="form-check">
+                <input type="checkbox" name="" id="${task.id}" class="form-check-input">
+                <label for="${task.id}" class="form-check-label"> ${task.taskName}</label>
+            </div>
+        </li>
+       
+         `;
+            ul.insertAdjacentHTML("beforeend", li)
+
+        }
+
+        //let btnEkle = 
+        document.querySelector("#btnAddNewTask").addEventListener("click", newTask);
+
+
+        // function (event) {
+        //     console.log("click event: new task");
+        //     event.preventDefault();
+        // })
+
+        document.querySelector("#btnClear").addEventListener("click", function (event) {
+            console.log("click event: clear");
+            console.log(event);
+            event.preventDefault();
+        })
+
+        function newTask(event) {
+            console.log("click event:new task");
+            console.log(event.target);
+            event.target.classList.add("btn-lg");
+
+            event.preventDefault();
+        }
+        // btnEkle
+
+    </script>
+
+</body>
+
+</html>
