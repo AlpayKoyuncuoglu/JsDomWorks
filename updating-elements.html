@@ -62,9 +62,18 @@
         // console.log(x.remove());
 
         // document.querySelector("#task-list").parentElement.remove();
-        sonuc = document.querySelector("#task-list").children[2].remove();
+       // sonuc = document.querySelector("#task-list").children[2].remove();
         console.log(sonuc);
         // x.remove();
+        //document.querySelector("#task-list").removeAttribute("class");
+        //document.querySelector("#task-list").removeAttribute("id");
+        sonuc=document.querySelector("#task-list").children[1].getAttribute("class");
+        //sonuc=document.querySelector("#task-list").children[1].setAttribute("class","aa");
+        sonuc=document.querySelector("#task-list").children[1].classList;
+        document.querySelector("#task-list").children[1].classList.add("bg-danger");
+        document.querySelector("#task-list").children[1].classList.remove("bg-danger");
+        sonuc=document.querySelector("#task-list").children[1].classList.contains("bg-danger");
+        console.log(sonuc);
     </script>
 
 </body>
